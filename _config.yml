@@ -9,7 +9,7 @@
 title:  中国农业大学数字媒体实验室
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-   信息与电气工程学院<br>@powerd by jekyll
+   信息与电气工程学院<br>@powered by jekyll
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "kevinfoster@163.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
