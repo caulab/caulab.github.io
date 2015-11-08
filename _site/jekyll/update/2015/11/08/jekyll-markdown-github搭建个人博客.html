@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>如何快速搭建博客？</title>
+  <meta name="description" content="jekyll是一个静态站点生成器，可以根据Markdown文件自动生成静态的html文件。且github pages 支持托管jekyll。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="kevinfoster@163.com/jekyll/update/2015/11/08/jekyll-markdown-github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2.html">
+  <link rel="alternate" type="application/rss+xml" title="中国农业大学数字媒体实验室" href="kevinfoster@163.com/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">中国农业大学数字媒体实验室</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">关于</a>
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">如何快速搭建博客？</h1>
+    <p class="post-meta"><time datetime="2015-11-08T00:00:00+08:00" itemprop="datePublished">Nov 8, 2015</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>jekyll是一个静态站点生成器，可以根据Markdown文件自动生成静态的html文件。且github pages 支持托管jekyll。</p>
+
+<p>因此我只要在本地编写符合Jekyll规范的Markdown文件，上传到github上，github pages就会自动生成并托管整个网站。</p>
+
+<p>这样做带来的好处是：</p>
+
+<ol>
+  <li>专注。只需要关注Markdown内容的编写。无需考虑标签和样式，也不会干扰git的log。</li>
+  <li>历史版本。通过git历史可以看到自己思维的变迁。</li>
+  <li>免费，不限流量。</li>
+  <li>简单。你只要用自己喜欢的编辑器写文章就可以了，其他事情一概不用操心，都由github处理。</li>
+</ol>
+
+<blockquote>
+  <p>机器环境:Win7 64位</p>
+</blockquote>
+
+<ul>
+  <li><strong>安装rubyinstaller.</strong>
+    <ol>
+      <li>
+        <p>到<a href="http://rubyinstaller.org/downloads/" title="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>下载ruby安装文件，这里下载<strong>rubyinstaller-2.2.3-x64.exe</strong>，按照提示安装，勾选Add Ruby executables to your PATH.</p>
+
+        <p><img src="http://i.imgur.com/ll47i5c.png" alt="" /></p>
+      </li>
+      <li>Win7 64位默认安装位置：C:\Ruby22-x64.</li>
+      <li>验证ruby是否安装成功：cmd中ruby -v显示ruby版本号说明ruby安装成功.</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>安装rubygems.</strong></p>
+
+    <ol>
+      <li>官网下载安装包<a href="https://rubygems.org/pages/download" title="https://rubygems.org/pages/download">https://rubygems.org/pages/download</a></li>
+      <li>解压rubygems-2.4.8.zip到指定目录，为了方便管理解压后放到C:\Ruby22-x64\目录下.</li>
+      <li>cmd进入rubygems-2.4.8目录下(快捷键：打开C:\Ruby22-x64\rubygems-2.4.8目录，shift+鼠标右键，点击”在此处打开命令行窗口”),运行setup.rb.cmd 中 gem -v 显示版本号则说明正常.</li>
+    </ol>
+  </li>
+  <li><strong>安装DevKit-mingw64</strong>
+    <ol>
+      <li>下载相应版本<a href="http://rubyinstaller.org/downloads/" title="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>,在C:\Ruby22-x64\目录下新建DevKit文件夹，运行<strong>DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe</strong>后会提示解压目录，选择C:\Ruby22-x64\DevKit.</li>
+      <li>
+        <p>在C:\Ruby22-x64\DevKit中打开cmd，运行<code>ruby dk.rb init</code>，会提示配置config.yml.</p>
+
+        <p><img src="http://i.imgur.com/wTvR64K.png" alt="" /></p>
+      </li>
+      <li>
+        <p>打开C:\Ruby22-x64\DevKit目录下的config.yml，将ruby根目录加入到配置文件中，这里是C:/Ruby22-x64.如果有了就不需要再加.注意格式.</p>
+
+        <p><img src="http://i.imgur.com/oH8HCQI.png" alt="" /></p>
+      </li>
+      <li>执行ruby dk.rb install.</li>
+    </ol>
+  </li>
+  <li><strong>替换rubyGem库地址（相当重要，因为国内访问外网有线路问题，不仅更新速度慢，而且还会导致更新失败）</strong>
+    <ol>
+      <li>gem sources –remove https://rubygems.org/</li>
+      <li>gem sources -a http://ruby.taobao.org/</li>
+      <li>gem sources -l验证一下.
+ <img src="http://i.imgur.com/FIuowBr.png" alt="" /></li>
+    </ol>
+  </li>
+  <li><strong>安装rails</strong>
+    <ol>
+      <li>cmd运行gem install rails.</li>
+      <li>cmd运行rails -v显示rails版本号说明安装成功.</li>
+    </ol>
+  </li>
+  <li><strong>安装jekyll</strong>
+    <ol>
+      <li>cmd运行gem install jekyll</li>
+      <li>cmd运行jekyll -v验证，显示版本号说明安装成功.</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+<p>环境配置完整之后，下面进入正题，如何新建博客:</p>
+
+<ul>
+  <li>
+    <p>运行命令:jekyll new  文件夹名，比如jekyll new blog，会在当前目录生成blog文件夹.</p>
+
+    <p><img src="http://i.imgur.com/XsZ79C2.png" alt="" /></p>
+  </li>
+  <li>在生成的blog文件夹根目录下运行命令:jekyll serve –watch</li>
+  <li>
+    <p>浏览器中打开localhost:4000，命令运行过程中没有错误提示，浏览器中显示默认页面说明安装成功.</p>
+
+    <p><img src="http://i.imgur.com/9ljL0i6.png" alt="" /></p>
+  </li>
+  <li>使用markdown发布博客
+    <ol>
+      <li>
+        <p>markdown是什么？ 参考淘宝UED关于markdown的介绍<a href="http://ued.taobao.org/blog/2012/07/getting-started-with-markdown/" title="http://ued.taobao.org/blog/2012/07/getting-started-with-markdown/">http://ued.taobao.org/blog/2012/07/getting-started-with-markdown/</a>.  锤子手机发布会上罗永浩介绍了锤子科技出品的app<strong>锤子便签</strong>支持markdown功能，下载地址：<a href="http://bbs.smartisan.com/forum-92-1.html" title="锤子便签app">http://bbs.smartisan.com/forum-92-1.html</a>，非常好用，建议下载体验一番.</p>
+      </li>
+      <li>
+        <p>将markdown、html格式的文件以”YY-MM-DD-finename.filetype”命名放到_post文件夹下：如2015-09-10-firstpost.markdown.</p>
+      </li>
+    </ol>
+  </li>
+  <li>发布到github
+    <ol>
+      <li>首先注册一个<a href="https://github.com/">github</a>账号.</li>
+      <li>新建repository,以username.github.io的形式命名.</li>
+      <li>git提交本地代码到github.</li>
+      <li>git提交命令
+        <ul>
+          <li>git init</li>
+          <li>git add .</li>
+          <li>git commit -m “update”</li>
+          <li>git remote add origin https://github.com/cseryp/cseryp.github.io.git</li>
+          <li>git push -u origin master</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>参考文章
+    <ol>
+      <li><a href="http://www.cellier.me/2015/01/04/jekyll%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">每个人都应该有一个Jekyll博客</a></li>
+      <li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">git教程</a></li>
+    </ol>
+  </li>
+</ul>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>中国农业大学数字媒体实验室</li>
+          <li><a href="mailto:your-email@domain.com">kevinfoster@163.com</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+
+        <ul class="social-media-list">
+
+          <li>
+           <a href="http://www.cau.edu.cn">中国农业大学</a>
+          </li>
+
+          <li>
+           <a href="http://ciee.cau.edu.cn/">信息学院</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>信息与电气工程学院<br>@powerd by jekyll
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
